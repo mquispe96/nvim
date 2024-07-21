@@ -18,9 +18,12 @@ require('nvim-tree').setup {
   },
   renderer = {
     add_trailing = true,
-    special_files = {"README.md", ".env"},    
+    special_files = {"README.md", ".env", ".gitignore"},    
     icons = {
       git_placement = "after",
     }
   },
+   git ={
+    ignore = false,
+  }
  } 
