@@ -1,3 +1,5 @@
+vim.api.nvim_set_keymap('i', '<CR>', [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], { noremap = true, expr = true, silent = true })
+
 -- Additional key mappings for navigating completion menu
 vim.api.nvim_set_keymap('i', '<Down>', [[coc#pum#visible() ? coc#pum#next(1) : "\<Down>"]], { noremap = true, expr = true, silent = true })
 vim.api.nvim_set_keymap('i', '<Up>', [[coc#pum#visible() ? coc#pum#prev(1) : "\<Up>"]], { noremap = true, expr = true, silent = true })
