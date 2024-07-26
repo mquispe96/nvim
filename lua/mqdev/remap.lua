@@ -14,14 +14,11 @@ vim.g.gitgutter_enabled = 1
 vim.api.nvim_set_keymap('n', '<leader>gs', ':Git<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>gc', ':Git commit<CR>', { noremap = true, silent = true })
 
-vim.keymap.set("n", "<leader>y", "\"+y") -- Copy to clipboard
-vim.keymap.set("v", "<leader>y", "\"+y") -- Copy to clipboard
-vim.keymap.set("n", "<leader>Y", "\"+Y") -- Copy to clipboard (line)
-vim.keymap.set("n", "<leader>d", "\"_d") -- Delete without yanking
-vim.keymap.set("v", "<leader>d", "\"_d") -- Delete without yanking
-vim.keymap.set("n", "<leader>D", "\"_D") -- Delete without yanking (line)
-vim.keymap.set("n", "<leader>p", "\"+p") -- Paste from clipboard
--- vim.keymap.set("i", "<C-v>", "\"+p") -- Paste from clipboard
+vim.keymap.set("v", "<leader>y", '"+y', { noremap = true, silent = true }) -- Copy to clipboard
+vim.keymap.set("n", "<leader>Y", '"+Y', { noremap = true, silent = true }) -- Copy to clipboard (line)
+vim.keymap.set("v", "<leader>d", "\"_d", { noremap = true, silent = true }) -- Delete without yanking
+vim.keymap.set("n", "<leader>D", "\"_D", { noremap = true, silent = true }) -- Delete without yanking (line)
+vim.keymap.set("n", "<leader>p", '"+p', { noremap = true, silent = true }) -- Paste from clipboard
 
 -- Key mappings
 vim.api.nvim_set_keymap('v', '<C-c>', "y'>o<Esc>p='[v']gv", { noremap = true, silent = true }) -- Copy selected text paste below
