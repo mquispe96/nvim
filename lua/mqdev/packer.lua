@@ -27,7 +27,6 @@ return require('packer').startup(function(use)
   use 'airblade/vim-gitgutter'     -- Git file status
     
   -- OverAll Functionality Plugins
-  use 'tpope/vim-commentary'       -- For Commenting gcc & gc
   use {'neoclide/coc.nvim', branch = 'release'}  -- Auto Completion
   use 'mg979/vim-visual-multi'     -- Multi Cursor ctrl + n 
   use 'jiangmiao/auto-pairs'       -- Auto closes brackets and quotes
@@ -35,7 +34,17 @@ return require('packer').startup(function(use)
   use '907th/vim-auto-save'        -- Autosaves files
   use 'github/copilot.vim'         -- Copilot Plugin
   use 'kassio/neoterm'
-
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+      require('Comment').setup()
+    end
+  }
+  use {
+    'JoosepAlviste/nvim-ts-context-commentstring',
+    requires = { 'nvim-treesitter/nvim-treesitter' },
+  }
+  
   -- Misc
    use 'preservim/tagbar'           -- Tagbar for code navigation
 
