@@ -1,6 +1,30 @@
 -- Prettier command
 vim.cmd('command! -nargs=0 PP :PrettierAsync') -- Prettier command
 
+-- Command for `:GA` to run `:Git add .`
+vim.cmd('command! -nargs=0 GA :Git add .')
+
+-- Command for `:GC` to run `:Git commit -m <message>`
+vim.cmd('command! -nargs=1 GC :Git commit -m <q-args>')
+
+-- Command for `:GPS` to run `:Git push`
+vim.cmd('command! -nargs=* GPS :Git push <q-args>')
+
+-- Command for `:GPL` to run `:Git pull`
+vim.cmd('command! -nargs=* GPL :Git pull <q-args>')
+
+-- Command for `:GSW` to run `:Git switch`
+vim.cmd('command! -nargs=* GSW :Git switch <q-args>')
+
+-- Command for `:GRB` to run `:Git rebase`
+vim.cmd('command! -nargs=* GRB :Git rebase <q-args>')
+
+-- Command for `:GBR` to run `:Git branch`
+vim.cmd('command! -nargs=* GBR :Git branch <q-args>')
+
+-- Command for `:GCO` to run `:Git checkout`
+vim.cmd('command! -nargs=0 GCO :Git checkout -- .')
+
 -- Autosave
 vim.g.auto_save = 1
 
