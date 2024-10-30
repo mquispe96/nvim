@@ -8,19 +8,19 @@ vim.cmd('command! -nargs=0 GA :Git add .')
 vim.cmd('command! -nargs=1 GC :Git commit -m <q-args>')
 
 -- Command for `:GPS` to run `:Git push`
-vim.cmd('command! -nargs=* GPS :Git push <q-args>')
+vim.cmd('command! -nargs=* GPS execute "Git push" . (len(<q-args>) > 0 ? " " . <q-args> : "")')
 
 -- Command for `:GPL` to run `:Git pull`
-vim.cmd('command! -nargs=* GPL :Git pull <q-args>')
+vim.cmd('command! -nargs=* GPL execute "Git pull" . (len(<q-args>) > 0 ? " " . <q-args> : "")')
 
 -- Command for `:GSW` to run `:Git switch`
-vim.cmd('command! -nargs=* GSW :Git switch <q-args>')
+vim.cmd('command! -nargs=* GSW execute "Git switch" . (len(<q-args>) > 0 ? " " . <q-args> : "")')
 
 -- Command for `:GRB` to run `:Git rebase`
-vim.cmd('command! -nargs=* GRB :Git rebase <q-args>')
+vim.cmd('command! -nargs=1 GRB :Git rebase <q-args>')
 
 -- Command for `:GBR` to run `:Git branch`
-vim.cmd('command! -nargs=* GBR :Git branch <q-args>')
+vim.cmd('command! -nargs=* GBR execute "Git branch" . (len(<q-args>) > 0 ? " " . <q-args> : "")')
 
 -- Command for `:GCO` to run `:Git checkout`
 vim.cmd('command! -nargs=0 GCO :Git checkout -- .')
